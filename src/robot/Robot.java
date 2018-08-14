@@ -2,15 +2,16 @@ package robot;
 
 import lib.commandbased.Scheduler;
 import lib.commandbased.TimedRobot;
+import subsystems.Drivetrain;
 
 public class Robot extends TimedRobot 
 {
-
+	private Drivetrain dt;
 	public Robot() 
 	{
 	  //param:AutonTime, TeleopTime
 		super(10000000, 10000000);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public static void main(String[] args) 
@@ -22,47 +23,49 @@ public class Robot extends TimedRobot
 		} 
 		catch (InterruptedException e) 
 		{
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
 	}
+	
 
 	@Override
 	public void autonomousInit() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void autonomousPeriodic() 
 	{
-		// TODO Auto-generated method stub
+		
 		Scheduler.getInstance().run();
 	}
 
 	@Override
 	public void robotInit() {
-		// TODO Auto-generated method stub
+		
+		dt = Drivetrain.getInstance();
 		
 	}
 
 	@Override
 	public void robotPeriodic() {
-		// TODO Auto-generated method stub
+		
 		Scheduler.getInstance().run();
 		
 	}
 
 	@Override
-	public void teleopInit() {
-		// TODO Auto-generated method stub
+	public void teleopInit() 
+	{
+		
 		
 	}
 
 	@Override
 	public void teleopPeriodic() {
-		// TODO Auto-generated method stub
 		Scheduler.getInstance().run();
 		
 	}

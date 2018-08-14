@@ -18,6 +18,7 @@ public class Drivetrain extends Subsystem
 	private static Drivetrain dt;
 	private TalonSRX left;
 	private TalonSRX right;
+	
 	//constructor for the drivetrain
 	//Singleton means you can only have one object in that class at a time
 	//private because you don't want another class to call the drivetrain constructor
@@ -27,7 +28,7 @@ public class Drivetrain extends Subsystem
 		//initializing the talons based on the RobotMap constants
 		left = new TalonSRX(RobotMap.LEFT_TALON_ENABLE, RobotMap.LEFT_FORWARD, RobotMap.LEFT_BACKWARD);
 		right = new TalonSRX(RobotMap.RIGHT_TALON_ENABLE, RobotMap.RIGHT_FORWARD, RobotMap.RIGHT_BACKWARD);
-		//Test
+		
 		
 	}
 	
@@ -51,8 +52,27 @@ public class Drivetrain extends Subsystem
 	}
 	public void arcadeDrivePercentOutput(double speed, double turn)
 	{
-		left.set(ControlMode.PercentOutput, speed - turn);
-		right.set(ControlMode.PercentOutput, speed + turn);
+		left.set(ControlMode.PercentOutput, speed + turn);
+		right.set(ControlMode.PercentOutput, speed - turn);
+	}
+	/**
+	 * Getters and Setters for Talons
+	 */
+	public TalonSRX getLeftTalon()
+	{
+		return left;
+	}
+	public TalonSRX getRightTalon()
+	{
+		return right;
+	}
+	public void setLeftTalon(TalonSRX newLeftTalon)
+	{
+		left = newLeftTalon;
+	}
+	public void setRightTalon(TalonSRX newRightTalon)
+	{
+		right = newRightTalon;
 	}
 	
 

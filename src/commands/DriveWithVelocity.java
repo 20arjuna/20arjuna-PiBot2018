@@ -9,14 +9,15 @@ public class DriveWithVelocity extends Command
 	
 	public DriveWithVelocity(double s)
 	{
-		requires(Drivetrain.getInstance());
+		
 		speed = s;
 		
 	}
+	
 	@Override
 	protected void end() 
 	{
-		//Drivetrain.getInstance().initDefaultCommand();
+		
 		
 	}
 	@Override
@@ -28,8 +29,8 @@ public class DriveWithVelocity extends Command
 	@Override
 	protected void initialize() 
 	{
-		
-		
+		System.out.println("Initializing Command");
+		 
 	}
 	@Override
 	protected boolean isFinished() {
