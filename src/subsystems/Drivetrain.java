@@ -16,7 +16,7 @@ public class Drivetrain extends Subsystem
 	//instance variable of your Drivetrain
 	private static Drivetrain dt;
 	private TalonSRX left;
-	private TalonSRX right;
+	private TalonSRX right ;
 	//constructor for the drivetrain
 	//Singleton means you can only have one object in that class at a time
 	//private because you don't want another class to call the drivetrain constructor
