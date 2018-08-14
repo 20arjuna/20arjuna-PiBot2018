@@ -1,5 +1,6 @@
 package subsystems;
 
+import commands.DriveWithVelocity;
 //Libraries from the raspilib.jar
 import lib.commandbased.Command;
 import lib.commandbased.Subsystem;
@@ -16,7 +17,7 @@ public class Drivetrain extends Subsystem
 	//instance variable of your Drivetrain
 	private static Drivetrain dt;
 	private TalonSRX left;
-	private TalonSRX right ;
+	private TalonSRX right;
 	//constructor for the drivetrain
 	//Singleton means you can only have one object in that class at a time
 	//private because you don't want another class to call the drivetrain constructor
@@ -36,7 +37,7 @@ public class Drivetrain extends Subsystem
 	{
 		//setDefaultCommand sets the command to the Drivetrain
 		
-		 /**this.setDefaultCommand();*/
+		 this.setDefaultCommand(new DriveWithVelocity(1));
 	}
 	//Gets the instance of the Drivetrain
 	//Call drivetrain by typing "Drivetrain.getInstance().ExampleMethodCall()
