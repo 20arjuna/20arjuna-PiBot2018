@@ -9,11 +9,12 @@ public class Arm extends Subsystem
 {
 	private static Arm arm; //Main Arm static Field
 	private TalonSRX armServo;//TalonSRX servo Field
+	private static int angle;
 	
-	
-	private Arm()
+	private Arm(int startingAngle)
 	{
-		armServo = new TalonSRX(robot.RobotMap.ARM_GPIO_PIN);
+		angle = startingAngle;
+		armServo = new TalonSRX(angle);
 		
 	}
 	public void initDefaultCommand() 
@@ -25,11 +26,11 @@ public class Arm extends Subsystem
 	{
 		if (arm == null)
 		{
-			arm = new Arm();
+			arm = new Arm(angle);
 		}
 		return arm;
 	}
-	public void moveArmPosition(int angle)
+	public void moveArmPosition(double angle)
 	{
 		armServo.set(ControlMode.Position, angle);
 	}
