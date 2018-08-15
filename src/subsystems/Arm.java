@@ -38,6 +38,10 @@ public class Arm extends Subsystem
 	{
 		return armServo;
 	}
+	public void moveArmPercentOutput(double percent)
+	{
+		armServo.set(ControlMode.PercentOutput, percent);
+	}
 	
 
 }

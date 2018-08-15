@@ -2,11 +2,13 @@ package robot;
 
 import lib.commandbased.Scheduler;
 import lib.commandbased.TimedRobot;
+import subsystems.Arm;
 import subsystems.Drivetrain;
 
 public class Robot extends TimedRobot 
 {
 	private Drivetrain dt;
+	private Arm arm;
 	public Robot() 
 	{
 	  //param:AutonTime, TeleopTime
