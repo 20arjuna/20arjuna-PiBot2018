@@ -18,7 +18,11 @@ public class RobotMap
 	public static final String DRIVE_LEFT_KEY = "a";
 	public static final String DRIVE_RIGHT_KEY = "d";
 	public static final String STOP_KEY = "q";
-
+	
+	//Arm
+	public static final int ARM_GPIO_PIN = 23;
+	public static final String UP_ARM = "u";
+	public static final String DOWN_ARM = "j";
 	
 
 }

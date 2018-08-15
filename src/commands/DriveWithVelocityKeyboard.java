@@ -20,6 +20,7 @@ public class DriveWithVelocityKeyboard extends Command
 	{
 		double speed;
 		double turn;
+		
 		String value = ConsoleReader.getValue();
 		if(value.equals(RobotMap.DRIVE_FORWARD_KEY))
 		{
@@ -54,6 +55,7 @@ public class DriveWithVelocityKeyboard extends Command
 			speed = turn = 0;
 			
 		}
+		
 		else
 		{
 			speed = prevSpeed;
