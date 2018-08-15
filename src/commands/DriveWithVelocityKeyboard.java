@@ -7,7 +7,8 @@ import subsystems.Drivetrain;
 
 public class DriveWithVelocityKeyboard extends Command
 {
-
+	private double prevTurn;
+	private double prevSpeed;
 	@Override
 	protected void end() {
 		// TODO Auto-generated method stub
@@ -17,28 +18,53 @@ public class DriveWithVelocityKeyboard extends Command
 	@Override
 	protected void execute() 
 	{
+		double speed;
+		double turn;
 		String value = ConsoleReader.getValue();
 		if(value.equals(RobotMap.DRIVE_FORWARD_KEY))
 		{
-			Drivetrain.getInstance().arcadeDrivePercentOutput(1, 0);
+			System.out.println("Forward Commmand Running");
+			speed = 1;
+			turn = 0;
+			
 		}
 		else if (value.equals(RobotMap.DRIVE_BACKWARDS_KEY))
 		{
-			Drivetrain.getInstance().arcadeDrivePercentOutput(-1, 0);
+			System.out.println("Back Commmand Running");
+			speed = -1;
+			turn = 0;
+			
 		}
 		else if (value.equals(RobotMap.DRIVE_LEFT_KEY))
 		{
-			Drivetrain.getInstance().arcadeDrivePercentOutput(0, -1);
+			System.out.println("Left Commmand Running");
+			speed = 0;
+			turn = -1;
+			
 		}
 		else if(value.equals(RobotMap.DRIVE_RIGHT_KEY))
 		{
-			Drivetrain.getInstance().arcadeDrivePercentOutput(0, 1);
+			System.out.println("Right Commmand Running");
+			speed = 0;
+			turn = 1;
+			
 		}
 		else if(value.equals(RobotMap.STOP_KEY))
 		{
-			Drivetrain.getInstance().arcadeDrivePercentOutput(0, 0);
+			speed = turn = 0;
+			
 		}
+		else
+		{
+			speed = prevSpeed;
+			turn = prevTurn;
+		}
+		System.out.println("Speed: " + speed);
+		System.out.println("Turn: " + turn);
 		
+		Drivetrain.getInstance().arcadeDrivePercentOutput(speed, turn);
+		prevSpeed = speed;
+		prevTurn = turn;
 	}
 
 	@Override

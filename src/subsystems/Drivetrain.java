@@ -1,6 +1,7 @@
 package subsystems;
 
 import commands.DriveWithVelocity;
+import commands.DriveWithVelocityKeyboard;
 //Libraries from the raspilib.jar
 import lib.commandbased.Command;
 import lib.commandbased.Subsystem;
@@ -38,7 +39,7 @@ public class Drivetrain extends Subsystem
 	{
 		//setDefaultCommand sets the command to the Drivetrain
 		
-		 this.setDefaultCommand(new DriveWithVelocity(1));
+		 this.setDefaultCommand(new DriveWithVelocityKeyboard());
 	}
 	//Gets the instance of the Drivetrain
 	//Call drivetrain by typing "Drivetrain.getInstance().ExampleMethodCall()
