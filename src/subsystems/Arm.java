@@ -1,32 +1,33 @@
 package subsystems;
 
-import commands.DriveWithVelocityKeyboard;
+import commands.MoveArmKeyboard;
 import lib.commandbased.Subsystem;
 import lib.devices.TalonSRX;
 import lib.devices.TalonSRX.ControlMode;
+import robot.RobotMap;
 
 public class Arm extends Subsystem 
 {
 	private static Arm arm; //Main Arm static Field
 	private TalonSRX armServo;//TalonSRX servo Field
-	private static int angle;
 	
-	private Arm(int startingAngle)
+	
+	private Arm()
 	{
-		angle = startingAngle;
-		armServo = new TalonSRX(angle);
+		
+		armServo = new TalonSRX(RobotMap.ARM_GPIO_PIN);
 		
 	}
 	public void initDefaultCommand() 
 	{
-		 this.setDefaultCommand(new DriveWithVelocityKeyboard());
+		 this.setDefaultCommand(new MoveArmKeyboard());
 		
 	}
 	public static Arm getInstance()
 	{
 		if (arm == null)
 		{
-			arm = new Arm(angle);
+			arm = new Arm();
 		}
 		return arm;
 	}

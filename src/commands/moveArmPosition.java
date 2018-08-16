@@ -5,11 +5,11 @@ package commands;
 import lib.commandbased.TimedCommand;
 import subsystems.Arm;
 
-public class moveArmPosition extends TimedCommand
+public class MoveArmPosition extends TimedCommand
 {
 	private double angle;
 	
-	public moveArmPosition(double angle) 
+	public MoveArmPosition(double angle) 
 	{
 		super(robot.RobotMap.ARM_COMMAND_DURATION);
 		this.angle = angle;

@@ -3,12 +3,14 @@ package robot;
 import lib.commandbased.Scheduler;
 import lib.commandbased.TimedRobot;
 import subsystems.Arm;
+import subsystems.Claw;
 import subsystems.Drivetrain;
 
 public class Robot extends TimedRobot 
 {
 	private Drivetrain dt;
 	private Arm arm;
+	private Claw claw;
 	public Robot() 
 	{
 	  //param:AutonTime, TeleopTime
@@ -49,6 +51,8 @@ public class Robot extends TimedRobot
 	public void robotInit() {
 		
 		dt = Drivetrain.getInstance();
+		arm = Arm.getInstance();
+		claw = Claw.getInstance();
 		
 	}
 

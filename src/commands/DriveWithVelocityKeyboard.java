@@ -61,8 +61,7 @@ public class DriveWithVelocityKeyboard extends Command
 			speed = prevSpeed;
 			turn = prevTurn;
 		}
-		System.out.println("Speed: " + speed);
-		System.out.println("Turn: " + turn);
+		
 		
 		Drivetrain.getInstance().arcadeDrivePercentOutput(speed, turn);
 		prevSpeed = speed;

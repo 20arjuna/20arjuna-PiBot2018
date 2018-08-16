@@ -6,13 +6,15 @@ import lib.util.ConsoleReader;
 import robot.RobotMap;
 import subsystems.Arm;
 
-public class moveArmKeyboard extends Command
+public class MoveArmKeyboard extends Command
 {
 	private double prevAngle;
 	private boolean alive;
+	
 	//Default Constructor
-	public moveArmKeyboard()
+	public MoveArmKeyboard()
 	{
+		
 		alive = true;
 	}
 
@@ -24,22 +26,24 @@ public class moveArmKeyboard extends Command
 	@Override
 	protected void execute() 
 	{
-		double angle;
+		double angle = RobotMap.DOWN_ANGLE;
 		String value = ConsoleReader.getValue();
 
 		if(value.equals(RobotMap.UP_ARM))
 		{
+			
 			angle = RobotMap.UP_ANGLE;
-			Arm.getInstance().moveArmPosition(angle);
+			//Arm.getInstance().moveArmPosition(angle);
 			alive = true;
 		}
 		else if(value.equals(RobotMap.DOWN_ARM))
 		{
+			
 			angle = RobotMap.DOWN_ANGLE;
-			Arm.getInstance().moveArmPosition(angle);
+			//Arm.getInstance().moveArmPosition(angle);
 			alive = true;
 		}
-		else if(value.equals(RobotMap.KILL_SERVO))
+		else if(value.equals(RobotMap.KILL_ARM))
 		{
 			Arm.getInstance().moveArmPercentOutput(0);
 			alive = false;
@@ -52,6 +56,7 @@ public class moveArmKeyboard extends Command
 		
 		if(alive)
 		{
+			System.out.println("moving");
 			Arm.getInstance().moveArmPosition(angle);
 			prevAngle = angle;
 		}

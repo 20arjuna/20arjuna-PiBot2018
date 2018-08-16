@@ -28,7 +28,16 @@ public class RobotMap
 	public static final double ARM_COMMAND_DURATION = 0.5;
 	public static final double UP_ANGLE = 20;
 	public static final double DOWN_ANGLE = 50;
-	public static final String KILL_SERVO = "k";
+	public static final String KILL_ARM = "k";
+	
+	//Claw
+	public static final int CLAW_GPIO_PIN = 26;
+	public static final double CLAW_COMMAND_DURATION = 3;
+	public static final String CLAW_KEY_OPEN= "o";
+	public static final String CLAW_KEY_CLOSE= "p";
+	public static final double OPEN_CLAW_ANGLE = 10;
+	public static final double CLOSE_CLAW_ANGLE = 37;
+	public static final String KILL_CLAW = "i";
 	
 	
 
