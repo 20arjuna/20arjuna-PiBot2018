@@ -56,7 +56,6 @@ public class MoveArmKeyboard extends Command
 		
 		if(alive)
 		{
-			System.out.println("moving");
 			Arm.getInstance().moveArmPosition(angle);
 			prevAngle = angle;
 		}
@@ -64,7 +63,7 @@ public class MoveArmKeyboard extends Command
 
 	}
 
-
+	
 	@Override
 	protected void initialize() 
 	{

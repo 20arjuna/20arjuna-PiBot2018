@@ -39,6 +39,8 @@ public class RobotMap
 	public static final double CLOSE_CLAW_ANGLE = 37;
 	public static final String KILL_CLAW = "i";
 	
+	//TimedDriving
+	public static final double TIME_TO_DRIVE = 5 * Math.pow(10,  9); //Drive for 5 Seconds
 	
 
 }

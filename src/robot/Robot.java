@@ -1,5 +1,6 @@
 package robot;
 
+import commands.TimedDriveWithVelocity;
 import lib.commandbased.Scheduler;
 import lib.commandbased.TimedRobot;
 import subsystems.Arm;
@@ -35,8 +36,10 @@ public class Robot extends TimedRobot
 	
 
 	@Override
-	public void autonomousInit() {
-		
+	public void autonomousInit() 
+	{
+		TimedDriveWithVelocity autonCommand = new TimedDriveWithVelocity();
+		autonCommand.start();
 		
 	}
 

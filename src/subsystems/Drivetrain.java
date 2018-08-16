@@ -2,6 +2,7 @@ package subsystems;
 
 import commands.DriveWithVelocity;
 import commands.DriveWithVelocityKeyboard;
+import commands.TimedDriveWithVelocity;
 //Libraries from the raspilib.jar
 import lib.commandbased.Command;
 import lib.commandbased.Subsystem;
