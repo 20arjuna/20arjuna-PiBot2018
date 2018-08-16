@@ -2,6 +2,7 @@ package commands;
 
 import lib.commandbased.Command;
 import lib.util.ConsoleReader;
+import lib.util.MathUtil;
 import subsystems.Arm;
 import subsystems.Claw;
 
@@ -44,6 +45,11 @@ public class ClawControlKeyboard extends Command
 			Claw.getInstance().moveClawPercentOutput(0);
 			alive = false;
 			angle = prevAngle;
+		}
+		else if(MathUtil.isNumber(value))
+		{
+			angle = Double.parseDouble(value);
+			Claw.getInstance().moveClawPosition(angle);
 		}
 		else
 		{

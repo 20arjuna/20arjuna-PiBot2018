@@ -3,6 +3,7 @@ package commands;
 
 import lib.commandbased.Command;
 import lib.util.ConsoleReader;
+import lib.util.MathUtil;
 import robot.RobotMap;
 import subsystems.Arm;
 
@@ -28,7 +29,7 @@ public class MoveArmKeyboard extends Command
 	{
 		double angle = RobotMap.DOWN_ANGLE;
 		String value = ConsoleReader.getValue();
-
+		
 		if(value.equals(RobotMap.UP_ARM))
 		{
 			
@@ -49,6 +50,7 @@ public class MoveArmKeyboard extends Command
 			alive = false;
 			angle = prevAngle;
 		}
+		
 		else
 		{
 			angle = prevAngle;
