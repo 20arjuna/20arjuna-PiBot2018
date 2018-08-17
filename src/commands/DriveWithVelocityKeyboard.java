@@ -1,14 +1,20 @@
 package commands;
 
+
+
+
+//import KeyboardInput.DemoKeyListener;
 import lib.commandbased.Command;
 import lib.util.ConsoleReader;
 import robot.RobotMap;
 import subsystems.Drivetrain;
 
-public class DriveWithVelocityKeyboard extends Command
+public class DriveWithVelocityKeyboard extends Command 
 {
 	private double prevTurn;
 	private double prevSpeed;
+	
+	
 	@Override
 	protected void end() {
 		// TODO Auto-generated method stub
@@ -25,14 +31,14 @@ public class DriveWithVelocityKeyboard extends Command
 		if(value.equals(RobotMap.DRIVE_FORWARD_KEY))
 		{
 			System.out.println("Forward Commmand Running");
-			speed = 1;
+			speed = 0.5;
 			turn = 0;
 			
 		}
 		else if (value.equals(RobotMap.DRIVE_BACKWARDS_KEY))
 		{
 			System.out.println("Back Commmand Running");
-			speed = -1;
+			speed = -.5;
 			turn = 0;
 			
 		}
@@ -70,7 +76,7 @@ public class DriveWithVelocityKeyboard extends Command
 
 	@Override
 	protected void initialize() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -79,5 +85,7 @@ public class DriveWithVelocityKeyboard extends Command
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
 
 }

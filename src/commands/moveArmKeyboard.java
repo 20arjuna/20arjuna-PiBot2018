@@ -44,6 +44,11 @@ public class MoveArmKeyboard extends Command
 			//Arm.getInstance().moveArmPosition(angle);
 			alive = true;
 		}
+		else if(value.equals(RobotMap.LOW_ARM))
+		{
+			angle = RobotMap.LOWISH_ANGLE;
+			alive = true;
+		}
 		else if(value.equals(RobotMap.KILL_ARM))
 		{
 			Arm.getInstance().moveArmPercentOutput(0);

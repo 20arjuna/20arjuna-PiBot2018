@@ -15,7 +15,7 @@ public class Robot extends TimedRobot
 	public Robot() 
 	{
 	  //param:AutonTime, TeleopTime
-		super(10000000, 10000000);
+		super(15000, 135000);
 		
 	}
 
@@ -38,8 +38,11 @@ public class Robot extends TimedRobot
 	@Override
 	public void autonomousInit() 
 	{
-		TimedDriveWithVelocity autonCommand = new TimedDriveWithVelocity();
-		autonCommand.start();
+		
+		  TimedDriveWithVelocity autonCommand = new TimedDriveWithVelocity();
+		  autonCommand.start();
+		 
+		
 		
 	}
 
@@ -56,7 +59,8 @@ public class Robot extends TimedRobot
 		dt = Drivetrain.getInstance();
 		arm = Arm.getInstance();
 		claw = Claw.getInstance();
-		
+		arm.moveArmPosition(RobotMap.DOWN_ANGLE);
+		claw.moveClawPosition(RobotMap.CLOSE_CLAW_ANGLE);
 	}
 
 	@Override

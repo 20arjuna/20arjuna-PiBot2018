@@ -46,7 +46,7 @@ public class ClawControlKeyboard extends Command
 			alive = false;
 			angle = prevAngle;
 		}
-		else if(MathUtil.isNumber(value))
+		else if( MathUtil.isNumber(value))
 		{
 			angle = Double.parseDouble(value);
 			Claw.getInstance().moveClawPosition(angle);
