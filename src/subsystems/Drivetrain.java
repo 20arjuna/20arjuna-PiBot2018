@@ -8,6 +8,7 @@ import lib.commandbased.Command;
 import lib.commandbased.Subsystem;
 import lib.devices.TalonSRX;
 import lib.devices.TalonSRX.ControlMode;
+import lib.devices.TalonSRX.FeedbackDevice;
 //Importing the RobotMap class from
 //Package: robot
 //Class: RobotMap
@@ -76,6 +77,13 @@ public class Drivetrain extends Subsystem
 	{
 		right = newRightTalon;
 	}
+	public void talonInit()
+	{
+		left.setupEncoder(RobotMap.LEFT_ORANGE_PIN, RobotMap.LEFT_BROWN_PIN);
+		right.setupEncoder(RobotMap.RIGHT_ORANGE_PIN, RobotMap.RIGHT_ORANGE_PIN);
+		left.configSelectedFeedbackSensor(FeedbackDevice.MagneticEncoder, RobotMap.PID_PRIMARY, RobotMap.TIMEOUT);
+	}
+	
 	
 
 }

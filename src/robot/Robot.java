@@ -3,6 +3,7 @@ package robot;
 import commands.TimedDriveWithVelocity;
 import lib.commandbased.Scheduler;
 import lib.commandbased.TimedRobot;
+import lib.devices.TalonSRX;
 import subsystems.Arm;
 import subsystems.Claw;
 import subsystems.Drivetrain;
@@ -51,6 +52,7 @@ public class Robot extends TimedRobot
 	{
 		
 		Scheduler.getInstance().run();
+		dt.talonInit();
 	}
 
 	@Override
@@ -78,8 +80,20 @@ public class Robot extends TimedRobot
 	}
 
 	@Override
-	public void teleopPeriodic() {
+	public void teleopPeriodic() 
+	{
 		Scheduler.getInstance().run();
+		dt.talonInit();
+		
+		TalonSRX left = dt.getLeftTalon();
+		TalonSRX right = dt.getRightTalon();
+		
+		System.out.println("Left Encoder Position: " + left.getSelectedSensorPosition(RobotMap.PID_PRIMARY, RobotMap.TIMEOUT));
+		System.out.println("Right Encoder Position: " + right.getSelectedSensorPosition(RobotMap.PID_PRIMARY, RobotMap.TIMEOUT));
+		
+		System.out.println("Left Encoder Velocity: " + left.getSelectedSensorVelocity(RobotMap.PID_PRIMARY, RobotMap.TIMEOUT));
+		System.out.println("Right Encoder Velocity: " + right.getSelectedSensorVelocity(RobotMap.PID_PRIMARY, RobotMap.TIMEOUT));
+		
 		
 	}
 

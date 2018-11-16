@@ -4,15 +4,23 @@ import java.awt.event.KeyEvent;
 
 public class RobotMap 
 {
+	//Talons General
+	
+	public static final int PID_PRIMARY = 0;
+	public static final int TIMEOUT = 10; 
 	//Left Talons
 	public static final int LEFT_TALON_ENABLE = 4;
 	public static final int LEFT_FORWARD = 13;
 	public static final int LEFT_BACKWARD = 16;
+	public static final int LEFT_ORANGE_PIN = 0;
+	public static final int LEFT_BROWN_PIN = 2;
 	
 	//Right Talons
 	public static final int RIGHT_FORWARD = 12;
 	public static final int RIGHT_BACKWARD = 14;
 	public static final int RIGHT_TALON_ENABLE = 5;
+	public static final int RIGHT_ORANGE_PIN = 27;
+	public static final int RIGHT_BROWN_PIN = 29;
 	
 	//Keyboard Input Keys
 	public static final String DRIVE_FORWARD_KEY = "w";
@@ -42,6 +50,8 @@ public class RobotMap
 	
 	//TimedDriving
 	public static final double TIME_TO_DRIVE = 1.8 * Math.pow(10,  9); //Drive for 5 Seconds	
+
+
 	
 
 }
